@@ -14,5 +14,20 @@ end
 notes = zeros(4,30);
 start = randi(4,1,1);
 
+%Picking Random notes based on Transition Matrix
+B = zeros(1,4);
+
+B(1) = 4;
+B(2) = 8;
+B(3) = -8;
+B(4) = 16;
+
+C = A(1:4);
+
+R = randsample(B, 10, true, C);
+transpose(R);
+
+fileID = fopen('output.txt','w');
+fprintf(fileID,'%.0f\n',R);
 
 
