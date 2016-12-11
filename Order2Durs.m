@@ -23,6 +23,9 @@ notes1 = zeros(4,30);
 start = randi(4,1,1);
 
 %Picking Random notes based on Transition Matrix
+C = A(1:4);
+R = randsample(B, 1, true, C);
+
 
 A2 = zeros(4);
 
@@ -46,10 +49,6 @@ A2(4,4) = 0/3;	%16th 16th
 %A 1X1 matrix of random #'s from 7
 notes = zeros(4,30);
 %start = randi(4,1,1);
-
-
-C = A(1:4);
-R = randsample(B, 1, true, C);
 
 % Number of notes - 1 since you have a starting note
 N = 10;
