@@ -24,23 +24,6 @@ start = randi(4,1,1);
 
 %Picking Random notes based on Transition Matrix
 
-startMat = zeros(4);
-
-for i = 1
-    if (R(1,i) == 4) 
-        startMat(1,i) = 4;
-    end
-    if (R(1,i) == 8) 
-        startMat(2,i) = 8;
-    end
-    if (R(1,i) == -8) 
-        startMat(3,i) = -8;
-    end
-    if (R(1,i) == 16) 
-        startMat(4,i) = 16;
-    end
-end
-
 A2 = zeros(4);
 
 A2(1,1) = 1/6;	%quarter quarter
