@@ -8,6 +8,7 @@
 #
 #print(notes)
 
+#Values taken from Yankee Doodle
 notes = "gccdecedgccdecbgccdefedcbgabccabagabcgagfegabagabcagcbdcc"
 durs = "888888888888884888888888888848168888416884416888888888848"
 
