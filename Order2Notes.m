@@ -53,3 +53,76 @@ A(5,7) = 0/10; %g e
 A(6,7) = 1/10; %g f
 A(7,7) = 0/10; %g g
 
+
+A2 = zeros(7);
+
+for i = 1:7
+	A2(1,i) = 9/57;
+	A2(2,i) = 8/57;
+	A2(3,i) = 16/57;
+	A2(4,i) = 6/57;
+	A2(5,i) = 6/57;
+	A2(6,i) = 2/57;
+	A2(7,i) = 10/57;
+end
+
+%a 1X1 matrix of random #'s from 7
+notes = zeros(7,30);
+start = randi(7,1,1);
+
+B = [1,2,3,4,5,6,7];
+C = A2(1:7);
+
+R = randsample(B, 1, true, C);
+
+N = 10;
+fileID = fopen('output1.txt','w');
+
+for i = 1:N
+    if R == 1
+        currentProbab = A2(1:7,1);
+        transpose(currentProbab);
+        R = randsample(B, 1, true, currentProbab);
+    elseif R == 2
+        currentProbab = A2(1:7,2);
+        transpose(currentProbab);
+        R = randsample(B, 1, true, currentProbab);
+    elseif R == 3
+        currentProbab = A2(1:7,3);
+        transpose(currentProbab);
+        R = randsample(B, 1, true, currentProbab);
+    elseif R == 4
+        currentProbab = A2(1:7,4);
+        transpose(currentProbab);
+        R = randsample(B, 1, true, currentProbab);
+    elseif R == 5
+        currentProbab = A2(1:7,5);
+        transpose(currentProbab);
+        R = randsample(B, 1, true, currentProbab);
+
+        fprintf(fileID,'%.0f\n',R);
+    elseif R == 6
+        currentProbab = A2(1:7,6);
+        transpose(currentProbab);
+        R = randsample(B, 1, true, currentProbab);
+    elseif R == 7
+        currentProbab = A2(1:7,7);
+        transpose(currentProbab);
+        R = randsample(B, 1, true, currentProbab);
+    end
+    if R == 1
+        fprintf(fileID, '%s\r\n','a');
+    elseif R == 2
+        fprintf(fileID, '%s\r\n','b');
+    elseif R == 3
+        fprintf(fileID, '%s\r\n','c');
+    elseif R == 4
+        fprintf(fileID, '%s\r\n','d');
+    elseif R == 5
+        fprintf(fileID, '%s\r\n','e');  
+    elseif R == 6
+        fprintf(fileID, '%s\r\n','f');
+    elseif R == 7
+        fprintf(fileID, '%s\r\n','g');  
+    end
+end
