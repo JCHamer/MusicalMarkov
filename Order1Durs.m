@@ -46,9 +46,6 @@ A2(2,4) = 3/3;	%16th 8th
 A2(3,4) = 0/3;	%16th dotted 8th
 A2(4,4) = 0/3;	%16th 16th
 
-%A 1X1 matrix of random #'s from 7
-notes = zeros(4,30);
-%start = randi(4,1,1);
 
 % Number of notes - 1 since you have a starting note
 N = 10;

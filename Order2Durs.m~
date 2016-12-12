@@ -130,15 +130,16 @@ N = 18;
 
 for i = 1:N 
     if (R1 == -8) && (R2 == -8) 
-       currentProbab = A3(1:4,3,3);
+       currentProbab = A3(1:7,3,3);
     elseif R1 == -8
-       currentProbab = A3(1:4,R2/4,3);
+       currentProbab = A3(1:7,R2/4,R1/4);
     elseif R2 == -8
-       currentProbab = A3(1:4,3,R1/4);
+       currentProbab = A3(1:7,R2/4,R1/4);
     end
     transpose(currentProbab);
     R1 = R2;
     R2 = randsample(B, 1, true, currentProbab);
-    fprintf(fileID, '%.0f\n',R2);
+    fprintf(fileID, '%s\r\n',noteMat(R2,1));
+    
 end
 

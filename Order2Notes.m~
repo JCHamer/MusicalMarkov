@@ -431,11 +431,10 @@ A3(7,7,7) = 0/1; %g g g
 N = 18;
 
 for i = 1:N 
-    currentProbab = A3(1:7,R2,R1);
+    currentProbab = A3(1:7,R2,R1);  
     transpose(currentProbab);
-    R1 = R2;
     R2 = randsample(B, 1, true, currentProbab);
     fprintf(fileID, '%s\r\n',noteMat(R2,1));
     
 end
-
+%}
