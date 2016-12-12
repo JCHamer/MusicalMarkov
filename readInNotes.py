@@ -17,25 +17,30 @@ pitchDict = {'a' : 1, 'b' : 2, 'c' : 3, 'd' : 4, 'e' : 5, 'f' : 6, 'g' : 7}
 durations = "4816"
 durDict = {'4' : 1, '8' : 2, '1' : 3, '6' : 4}
 
-totals = [0]*7
-for prevPitch in pitches:
-	for currPitch in pitches:
-		occur = notes.count(prevPitch + currPitch)
-		totals[pitchDict[prevPitch] - 1] += occur
-		print("A(%i,%i) = %i/xx; %%%s %s" % (pitchDict[currPitch], pitchDict[prevPitch], occur, str(prevPitch), str(currPitch)))
+totals = [0]*49
+for prevPrevPitch in pitches:
+	for prevPitch in pitches:
+		for currPitch in pitches:
+			occur = notes.count(prevPrevPitch + prevPitch + currPitch)
+			totals[(pitchDict[prevPrevPitch] - 1)*7 + (pitchDict[prevPitch] - 1)] += occur
+			print("A(%i,%i,%i) = %i/%sx; %%%s %s %s" % (pitchDict[currPitch], pitchDict[prevPitch], pitchDict[prevPrevPitch], occur, str(pitchDict[prevPrevPitch]) + str(pitchDict[prevPitch]),  str(prevPrevPitch), str(prevPitch), str(currPitch)))
 
-for total in totals:
-	print(total)
+
+for num in range(7):
+	for num2 in range(7):
+		print("%i%i: %i" %(1 + num, 1 + num2, totals[num*7 + num2]))
 
 print
 
-totals = [0]*4
-for prevDur in durations:
-	for currDur in durations:
-		occur = durs.count(prevDur + currDur)
-		totals[durDict[prevDur] - 1] += occur
-		print("A(%i,%i) = %i/xx; %%%s %s" % (durDict[currDur], durDict[prevDur], occur, str(prevDur), str(currDur)))
+totals = [0]*16
+for prevPrevDur in durations:
+	for prevDur in durations:
+		for currDur in durations:
+			occur = durs.count(prevPrevDur + prevDur + currDur)
+			totals[(durDict[prevPrevDur] - 1)*4 + (durDict[prevDur] - 1)] += occur
+			print("A(%i,%i,%i) = %i/%sx; %%%s %s %s" % (durDict[currDur], durDict[prevDur], durDict[prevPrevDur], occur, str(durDict[prevPrevDur]) + str(durDict[prevDur]),  str(prevPrevDur), str(prevDur), str(currDur)))
 
-for total in totals:
-	print(total)
+for num in range(4):
+	for num2 in range(4):
+		print("%i%i: %i" %(1 + num, 1 + num2, totals[num*4 + num2]))
 
