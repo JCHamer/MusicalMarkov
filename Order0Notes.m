@@ -18,11 +18,9 @@ noteMat = ['a';'b';'c';'d';'e';'f';'g'];
 B = [1,2,3,4,5,6,7];
 C = A(1:7);
 
-R = randsample(B, 10, true, C);
-transpose(R);
-
 fileID = fopen('output0Notes.txt','w');
 
 for i = 1:10 
+    R = randsample(B, 1, true, C);
     fprintf(fileID, '%s\r\n',noteMat(R,1));
 end
