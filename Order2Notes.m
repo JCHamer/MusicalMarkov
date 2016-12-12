@@ -428,7 +428,7 @@ A3(6,7,7) = 0/1; %g g f
 A3(7,7,7) = 0/1; %g g g
 
 
-N = 18;
+N = 48;
 
 for i = 1:N 
     currentProbab = A3(1:7,R2,R1);

@@ -75,7 +75,7 @@ R = randsample(B, 1, true, C);
 fprintf(fileID, '%s\r\n',noteMat(R,1));
 
 % Number of notes outputted + 1 (first note is based on 0 ordered matrix)
-N = 9;
+N = 49;
 
 for i = 1:N
     currentProbab = A(1:7,R);  

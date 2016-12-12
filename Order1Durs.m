@@ -48,7 +48,7 @@ A2(4,4) = 0/3;	%16th 16th
 
 
 % Number of notes - 1 since you have a starting note
-N = 10;
+N = 50;
 fileID = fopen('output1Durs.txt','w');
 
 for i = 1:N
