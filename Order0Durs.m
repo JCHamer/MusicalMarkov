@@ -27,7 +27,7 @@ C = A(1:4);
 R = randsample(B, 10, true, C);
 transpose(R);
 
-fileID = fopen('output.txt','w');
+fileID = fopen('output0Durs.txt','w');
 fprintf(fileID,'%.0f\n',R);
 
 

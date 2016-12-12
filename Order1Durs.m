@@ -52,7 +52,7 @@ notes = zeros(4,30);
 
 % Number of notes - 1 since you have a starting note
 N = 10;
-fileID = fopen('output.txt','w');
+fileID = fopen('output1Durs.txt','w');
 
 for i = 1:N
     if R == -8 

@@ -67,7 +67,7 @@ for i = 1:7
 end
 
 
-fileID = fopen('output1.txt','w');
+fileID = fopen('output1Notes.txt','w');
 noteMat = ['a';'b';'c';'d';'e';'f';'g'];
 B = [1,2,3,4,5,6,7];
 C = A2(1:7);

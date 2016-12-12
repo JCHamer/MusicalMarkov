@@ -13,9 +13,7 @@ for i = 1:7
 	A(7,i) = 10/57;
 end
 
-%a 1X1 matrix of random #'s from 7
-notes = zeros(7,30);
-start = randi(7,1,1);
+noteMat = ['a';'b';'c';'d';'e';'f';'g'];
 
 B = [1,2,3,4,5,6,7];
 C = A(1:7);
@@ -23,22 +21,8 @@ C = A(1:7);
 R = randsample(B, 10, true, C);
 transpose(R);
 
-fileID = fopen('output1.txt','w');
+fileID = fopen('output0Notes.txt','w');
 
 for i = 1:10 
-    if R(1,i) == 1
-        fprintf(fileID, '%s\r\n','a');
-    elseif R(1,i) == 2
-        fprintf(fileID, '%s\r\n','b');
-    elseif R(1,i) == 3
-        fprintf(fileID, '%s\r\n','c');
-    elseif R(1,i) == 4
-        fprintf(fileID, '%s\r\n','d');
-    elseif R(1,i) == 5
-        fprintf(fileID, '%s\r\n','e');  
-    elseif R(1,i) == 6
-        fprintf(fileID, '%s\r\n','f');
-    elseif R(1,i) == 7
-        fprintf(fileID, '%s\r\n','g');  
-    end
+    fprintf(fileID, '%s\r\n',noteMat(R,1));
 end
